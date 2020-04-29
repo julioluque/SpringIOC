@@ -1,6 +1,6 @@
-package ar.jluque.IoC;
+package ar.jluque.ioc;
 
-public class secretarioEmpleado implements Empleados {
+public class SecretarioEmpleado implements Empleados {
 
 	@Override
 	public String getTareas() {

@@ -1,4 +1,4 @@
-package ar.jluque.IoC;
+package ar.jluque.ioc;
 
 public class JefeEmpleado implements Empleados {
 
