@@ -2,7 +2,7 @@ package ar.jluque.ioc;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class UsoEmpleados {
+public class UsoEmpleadosMain {
 	public static void main(String[] args) {
 
 		/*
@@ -24,6 +24,8 @@ public class UsoEmpleados {
 		
 //		3 -> USAMOS EL BEAN
 		System.out.println(julio.getTareas());
+		
+		System.out.println(julio.getInfomres());
 		
 //		4 -> CERRAMOS EL XML
 		contexto.close();
