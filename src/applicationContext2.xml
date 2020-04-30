@@ -11,8 +11,10 @@
 
 	<bean id="miInforme" class="ar.jluque.ioc.informeImpl" />
 
-	<bean id="miSecretario" class="ar.jluque.ioc.SecretarioEmpleado">
+	<bean id="miSecretario" class="ar.jluque.ioc.SecretarioEmpleado" scope="singleton">
 		<property name="informeNuevo" ref="miInforme" />
 	</bean>
+
+	
 
 </beans>
