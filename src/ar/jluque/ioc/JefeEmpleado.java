@@ -2,15 +2,35 @@ package ar.jluque.ioc;
 
 public class JefeEmpleado implements Empleados {
 
-	private Informes informeNuevo;
+	private String email;
+	private String nombreEmpresa;
 
+	private Informes informeNuevo;
+	
 	public JefeEmpleado(Informes informeNuevo) {
 		this.informeNuevo = informeNuevo;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNombreEmpresa() {
+		return nombreEmpresa;
+	}
+
+	public void setNombreEmpresa(String nombreEmpresa) {
+		this.nombreEmpresa = nombreEmpresa;
+	}
+
 
 	@Override
 	public String getTareas() {
-		return "Tareas de un Jefe: Gestionar tareas relativas a mis empleados de seccion";
+		return "Tareas de un Jefe: Gestionar la seccion empleados";
 	}
 
 	@Override

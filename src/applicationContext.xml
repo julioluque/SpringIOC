@@ -8,26 +8,30 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
-	
-<!-- 	CREAMOS EL BEAN QUE QUEREMOS INYECTAR -->
+
+	<!-- CREAMOS EL BEAN QUE QUEREMOS INYECTAR -->
 	<bean id="miInforme" class="ar.jluque.ioc.informeImpl" />
-	
+
 	<!-- CREACION DE LA DEPENDENCIA POR CONSTRUCTOR -> que inyecta la clase 
 		InformeImpl la cual implementa la interfaz -->
 	<bean id="miDirector" class="ar.jluque.ioc.DirectorEmpleado">
 		<constructor-arg ref="miInforme" />
+		<property name="email" value="julio.a.luque@gmail.com" />
+		<property name="nombreEmpresa" value="JL Company" />
 	</bean>
 
 	<bean id="miJefe" class="ar.jluque.ioc.JefeEmpleado">
 		<constructor-arg ref="miInforme" />
+		<property name="email" value="responsable@jluque.com"></property>
+		<property name="nombreEmpresa" value="JL Company"></property>
 	</bean>
 
-
+	<!-- CREACION DE DEPENDENCIA POR SETTER -> El property debe llamar al setter 
+		por su nombre. ¡¡Sin set y con minuscula!! -->
 	<bean id="miSecretario" class="ar.jluque.ioc.SecretarioEmpleado">
-		<!-- CREACION DE DEPENDENCIA POR SETTER -> El property debe llamar al setter 
-			por su nombre. ¡¡Sin set y con minuscula!! -->
-		<property name="miSecretarioInformeNuevo" ref="miInforme" />
-
+		<property name="informeNuevo" ref="miInforme" />
+		<property name="email" value="secretaria@jluque.com" />
+		<property name="nombreEmpresa" value="JL Company" />
 	</bean>
 
 </beans>

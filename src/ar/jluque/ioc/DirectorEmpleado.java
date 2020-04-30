@@ -2,12 +2,31 @@ package ar.jluque.ioc;
 
 public class DirectorEmpleado implements Empleados {
 
-//	Creacion de campo tipo Informe (Interfaz)
+	private String email;
+	private String nombreEmpresa;
+
+//	 Creacion de campo tipo Informe (Interfaz)
 	private Informes informeNuevo;
 
 //	Creacion de constructor que inyecta la dependencia
 	public DirectorEmpleado(Informes informeNuevo) {
 		this.informeNuevo = informeNuevo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNombreEmpresa() {
+		return nombreEmpresa;
+	}
+
+	public void setNombreEmpresa(String nombreEmpresa) {
+		this.nombreEmpresa = nombreEmpresa;
 	}
 
 	@Override
