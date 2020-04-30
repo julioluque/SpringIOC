@@ -35,6 +35,7 @@
 		por su nombre. ¡¡Sin set y con minuscula!! -->
 	<bean id="miSecretario" class="ar.jluque.ioc.SecretarioEmpleado">
 		<property name="informeNuevo" ref="miInforme" />
+		
 		<property name="email" value="${email.secretaria}" />
 		<property name="nombreEmpresa" value="${nombreEmpresa}" />
 	</bean>
