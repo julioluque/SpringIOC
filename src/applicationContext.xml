@@ -9,6 +9,10 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
+	<!-- LLAMAMOS AL PROPERTY DONDE CONFIGURAMOS LOS VALUES -->
+	<context:property-placeholder
+		location="classpath:datosEmpresa.propiedades" />
+
 	<!-- CREAMOS EL BEAN QUE QUEREMOS INYECTAR -->
 	<bean id="miInforme" class="ar.jluque.ioc.informeImpl" />
 
@@ -16,22 +20,23 @@
 		InformeImpl la cual implementa la interfaz -->
 	<bean id="miDirector" class="ar.jluque.ioc.DirectorEmpleado">
 		<constructor-arg ref="miInforme" />
-		<property name="email" value="julio.a.luque@gmail.com" />
-		<property name="nombreEmpresa" value="JL Company" />
+		<property name="email" value="${email.director}" />
+		<property name="nombreEmpresa" value="${nombreEmpresa}"></property>
+
 	</bean>
 
 	<bean id="miJefe" class="ar.jluque.ioc.JefeEmpleado">
 		<constructor-arg ref="miInforme" />
-		<property name="email" value="responsable@jluque.com"></property>
-		<property name="nombreEmpresa" value="JL Company"></property>
+		<property name="email" value="${email.jefe}"></property>
+		<property name="nombreEmpresa" value="${nombreEmpresa}"></property>
 	</bean>
 
 	<!-- CREACION DE DEPENDENCIA POR SETTER -> El property debe llamar al setter 
 		por su nombre. ¡¡Sin set y con minuscula!! -->
 	<bean id="miSecretario" class="ar.jluque.ioc.SecretarioEmpleado">
 		<property name="informeNuevo" ref="miInforme" />
-		<property name="email" value="secretaria@jluque.com" />
-		<property name="nombreEmpresa" value="JL Company" />
+		<property name="email" value="${email.secretaria}" />
+		<property name="nombreEmpresa" value="${nombreEmpresa}" />
 	</bean>
 
 </beans>
