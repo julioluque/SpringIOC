@@ -1,5 +1,7 @@
 package ar.jluque.ioc;
 
+import com.sun.org.apache.xml.internal.security.Init;
+
 public class DirectorEmpleado implements Empleados {
 
 	private String email;
@@ -38,4 +40,15 @@ public class DirectorEmpleado implements Empleados {
 	public String getInfomres() {
 		return "Informe del Director :" + informeNuevo.getInformes();
 	}
+	
+//	init-method="metodoInit" ->  Encargado de ejecutar tareas antes qeu el bean este disponible 
+	public void metodoInit() {		 
+		System.out.println("METODO init() - Tareas a ejecutar antes de que el bean este listo");
+	}
+	
+//	destroy-method="metodoDestroy" -> Encargado de ejecutar tareas despues de que el bean haya sido utilizado
+	public void metodoDestroy() {	
+		System.out.println("METODO destroy() -> Tareas a ejecutar despues de utilizar el bean");
+	}
 }
+

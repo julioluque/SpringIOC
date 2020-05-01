@@ -1,5 +1,8 @@
 package ar.jluque.ioc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainSingletonPrototype {
@@ -8,6 +11,8 @@ public class MainSingletonPrototype {
 //		Carga de xml de configuracion
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
 
+		
+		
 //		peticion de beans
 		SecretarioEmpleado delfi = context.getBean("miSecretario", SecretarioEmpleado.class);
 		SecretarioEmpleado ceci = context.getBean("miSecretario", SecretarioEmpleado.class);
@@ -19,15 +24,31 @@ public class MainSingletonPrototype {
 		SecretarioEmpleado f = context.getBean("miSecretario", SecretarioEmpleado.class);
 		SecretarioEmpleado g = context.getBean("miSecretario", SecretarioEmpleado.class);
 
-		System.out.println(delfi);	
-		System.out.println(ceci);	
-		System.out.println(a);
-		System.out.println(b);
-		System.out.println(c);
-		System.out.println(d);
-		System.out.println(e);
-		System.out.println(f);
-		System.out.println(g);
+		List <SecretarioEmpleado> secretarioEmpleado = new ArrayList<SecretarioEmpleado>();
+		secretarioEmpleado.add(delfi);
+		secretarioEmpleado.add(ceci);
+		secretarioEmpleado.add(a);
+		secretarioEmpleado.add(b);
+		secretarioEmpleado.add(c);
+		secretarioEmpleado.add(d);
+		secretarioEmpleado.add(e);
+		secretarioEmpleado.add(f);
+		secretarioEmpleado.add(g);
+		
+		
+		for (SecretarioEmpleado s : secretarioEmpleado) {
+			System.out.println(s.hashCode());
+		}
+		
+//		System.out.println(delfi);	
+//		System.out.println(ceci);	
+//		System.out.println(a);
+//		System.out.println(b);
+//		System.out.println(c);
+//		System.out.println(d);
+//		System.out.println(e);
+//		System.out.println(f);
+//		System.out.println(g);
 
 		
 //		CON SINGLETON
